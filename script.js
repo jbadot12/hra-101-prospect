@@ -226,7 +226,7 @@ document.querySelectorAll(".experience-tab").forEach((tab) => {
   tab.addEventListener("click", () => setExperience(tab.dataset.stage));
 });
 
-const navLinks = [...document.querySelectorAll(".topnav a[href^='#']:not(.demo-nav)")];
+const navLinks = [...document.querySelectorAll(".topnav a[href^='#']")];
 const observedSections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
