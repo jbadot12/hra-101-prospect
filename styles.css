@@ -134,7 +134,10 @@ h1 span, h2 span { color: var(--red); }
 .hra-card small { color: var(--red-dark); font-size: .65rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 .hra-card h3 { margin: 10px 0 8px; font-size: 1.08rem; }
 .hra-card p { margin: 0; color: var(--muted); font-size: .8rem; }
-.hra-card a { margin-top: auto; padding-top: 18px; color: var(--red-dark); font-size: .8rem; font-weight: 800; text-decoration: none; }
+.hra-links { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--line); }
+.hra-card .hra-links a { color: var(--red-dark); font-size: .75rem; font-weight: 800; text-decoration: none; }
+.hra-card .hra-links .clinical-link { color: #55555a; }
+.hra-card .hra-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .selection-callout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 30px; align-items: center; margin-top: 34px; padding: 28px; border-radius: var(--radius); color: white; background: var(--ink); }
 .selection-callout h3 { margin: 0 0 9px; font-size: 1.75rem; }
 .selection-callout p { color: #d8d8db; }

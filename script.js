@@ -36,6 +36,20 @@ const categoryDescriptions = {
   "Weight Management": "Connect weight-related goals and needs to relevant support options."
 };
 
+const clinicalNotesBase = "https://hra-support.unlockhealth.com/specific-hra-app-documentation";
+
+function clinicalNotesUrl(name) {
+  if (name === "Menopause Continuum" || name === "Medical Weight Loss") return clinicalNotesBase;
+  if (name === "Sleep Apnea") return `${clinicalNotesBase}#sleep-hra`;
+  const anchor = name
+    .toLowerCase()
+    .replaceAll("&", " ")
+    .replaceAll("(spanish)", "spanish")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  return `${clinicalNotesBase}#${anchor}-hra`;
+}
+
 const activationContent = {
   search: {
     kicker: "Paid search · Capture active hand raisers",
@@ -163,7 +177,10 @@ function renderCatalog() {
       <small>${hra.category}</small>
       <h3>${hra.name}</h3>
       <p>${categoryDescriptions[hra.category]}</p>
-      <a href="${hra.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${hra.name} HRA demo">Take the live demo ↗</a>
+      <div class="hra-links">
+        <a href="${hra.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${hra.name} HRA demo">Live demo ↗</a>
+        <a class="clinical-link" href="${clinicalNotesUrl(hra.name)}" target="_blank" rel="noopener noreferrer" aria-label="Open clinical notes for ${hra.name}">Clinical notes ↗</a>
+      </div>
     `;
     catalogGrid.append(card);
   });

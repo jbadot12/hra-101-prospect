@@ -30,9 +30,9 @@ Then open `http://localhost:8000`.
 
 ## Content governance
 
-- The repository is private and the draft is marked `noindex,nofollow`.
+- The public site is marked `noindex,nofollow` to discourage search indexing.
 - The site contains no PHI and no credentials.
-- Internal Resource Hub and Key documentation are intentionally excluded.
+- HRA-specific clinical notes are linked as presenter references; broader internal Resource Hub and Key documentation are intentionally excluded.
 - HRA demos and sample pages open in a separate tab.
 - Case-study results are specific to the featured programs and are not guarantees of future performance.
 
