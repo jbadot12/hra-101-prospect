@@ -4,12 +4,12 @@ V1 of a prospect-facing, guided Health Risk Assessment (HRA) conversation. This 
 
 ## Narrative path
 
-1. Define an HRA, explain its value on both sides, and establish the clinical, white-label, and configurable proposition.
-2. Show how paid, owned, organic, and integrated marketing lead consumers to an assessment.
-3. Walk through the connected experience: reach, choose, assess, act, and continue.
-4. Use an optional expandable section for follow-up, integration, and measurement questions.
-5. Ground the strategy in current case studies.
-6. End with the searchable portfolio and open a live HRA demo.
+1. Set the scene: an HRA meets a consumer between a health question and a decision to seek care.
+2. Establish the consumer and health-system value, clinical foundation, white-label experience, and configurable strategy.
+3. Show how paid, owned, organic, and integrated marketing lead consumers to an assessment.
+4. Walk through the connected experience: reach, choose, assess, act, and continue.
+5. Ground the strategy in two current case studies.
+6. End with the searchable portfolio and move into the most relevant live HRA demo.
 
 ## Run locally
 
