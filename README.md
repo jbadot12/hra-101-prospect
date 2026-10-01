@@ -8,8 +8,10 @@ V1 of a prospect-facing, guided Health Risk Assessment (HRA) conversation. This 
 2. Establish the consumer and health-system value, clinical foundation, white-label experience, and configurable strategy.
 3. Show how paid, owned, organic, and integrated marketing lead consumers to an assessment.
 4. Walk through the connected experience: reach, choose, assess, act, and continue.
-5. Ground the strategy in two current case studies.
-6. End with the searchable portfolio and move into the most relevant live HRA demo.
+5. Ground the strategy in case studies from CHRISTUS, National Spine & Pain, Norton, and El Camino; open the full PDFs as needed.
+6. Use the searchable portfolio to open the most relevant live HRA demo in a separate tab.
+7. Return to the page to discuss built-in follow-up and connected systems.
+8. Explore Console screenshots for management, reporting, and optimization without logging into the live Console.
 
 ## Run locally
 
@@ -38,4 +40,6 @@ Then open `http://localhost:8000`.
 
 ## Status
 
-V1 draft for review. Hosting is not enabled by this repository setup.
+Updated October 1, 2026. Published at https://jbadot12.github.io/hra-101-prospect/ through GitHub Pages from the root of `main`.
+
+Next step: use the full conversation path in a live walkthrough and refine from presenter feedback. Console screenshots show a demo environment; the four view buttons update the screenshot and explanation, and each screenshot can open at full size.

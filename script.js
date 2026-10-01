@@ -243,6 +243,71 @@ document.querySelectorAll(".experience-tab").forEach((tab) => {
   tab.addEventListener("click", () => setExperience(tab.dataset.stage));
 });
 
+const reportContent = {
+  dashboard: {
+    title: "Review and manage active HRAs in one place.",
+    copy: "See lead capture, results, and status, with direct paths to customize HRAs, manage follow-up plans, build campaign URLs, and preview experiences.",
+    image: "assets/console-dashboard.jpg",
+    alt: "HRA Management program dashboard",
+    caption: "A single view of program activity and the tools to manage it."
+  },
+  funnel: {
+    title: "Understand progression from start to action.",
+    copy: "See where consumers begin, provide information, complete the HRA, and engage with calls to action. Use drop-off points to focus your next improvement.",
+    image: "assets/console-performance-funnel.jpg",
+    alt: "HRA Console engagement funnel showing starts, leads, completions, and CTA clicks",
+    caption: "Funnel reporting makes engagement and drop-off visible; CTA clicks are not completed appointments."
+  },
+  trends: {
+    title: "See how performance changes over time.",
+    copy: "Compare activity across HRAs and reporting periods. Spot seasonality, campaign effects, and assessments that may benefit from more promotion or experience updates.",
+    image: "assets/console-performance-trends.jpg",
+    alt: "HRA Console performance trends showing assessment completions by month",
+    caption: "Trend views help teams choose where to investigate and optimize."
+  },
+  cta: {
+    title: "Connect different results to different actions.",
+    copy: "Manage how result pathways map to scheduling, callbacks, education, related HRAs, and other supported next steps. Keep recommendations aligned with available care.",
+    image: "assets/console-cta-mapping.jpg",
+    alt: "HRA Console calls-to-action mapping for Heart HRA result pathways",
+    caption: "CTA mapping is a configuration view; CTA performance reporting shows how consumers engage."
+  }
+};
+
+const reportTabs = [...document.querySelectorAll(".report-tab")];
+function setReport(key) {
+  const content = reportContent[key];
+  reportTabs.forEach((tab) => {
+    const selected = tab.dataset.report === key;
+    tab.setAttribute("aria-selected", String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+  });
+  document.querySelector("#report-panel").setAttribute("aria-labelledby", `report-tab-${key}`);
+  document.querySelector("#report-title").textContent = content.title;
+  document.querySelector("#report-copy").textContent = content.copy;
+  document.querySelector("#report-caption").textContent = content.caption;
+  const image = document.querySelector("#report-image");
+  image.src = content.image;
+  image.alt = content.alt;
+  document.querySelector("#report-enlarge").href = content.image;
+  document.querySelector("#report-enlarge").setAttribute("aria-label", `Enlarge ${content.alt} screenshot`);
+  document.querySelector("#report-image-link").href = content.image;
+}
+reportTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => setReport(tab.dataset.report));
+  tab.addEventListener("keydown", (event) => {
+    let next;
+    if (event.key === "ArrowDown") next = (index + 1) % reportTabs.length;
+    else if (event.key === "ArrowUp") next = (index - 1 + reportTabs.length) % reportTabs.length;
+    else if (event.key === "Home") next = 0;
+    else if (event.key === "End") next = reportTabs.length - 1;
+    else return;
+    event.preventDefault();
+    setReport(reportTabs[next].dataset.report);
+    reportTabs[next].focus();
+  });
+});
+
 const navLinks = [...document.querySelectorAll(".topnav a[href^='#']")];
 const observedSections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
